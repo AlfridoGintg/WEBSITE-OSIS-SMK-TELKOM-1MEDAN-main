@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSIS SMK Telkom 1 Medann</title>
+    <link rel="icon" href="img/osis.png" type="image/png" sizes="16x16">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+      <script defer src="vanilla-tilt.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="reU46SJvdroNh9sAQlaVj";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script> 
+   
+    
+   
+
+</head>
+<body class="min-h-screen">
+  <!-- Popup Peringatan -->
+<div id="warningPopup" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 hidden">
+    <div class="bg-white rounded-xl p-8 max-w-sm w-full mx-4 relative">
+        <button id="closePopup" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+            <i class="fas fa-times text-xl"></i>
+        </button>
+        <span id="time" class="absolute top-4 left-4 text-sm text-gray-600"></span>
+        <div class="text-center mt-4">
+            <i class="fas fa-exclamation-triangle text-4xl text-yellow-500 mb-4"></i>
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">Perhatian!</h2>
+            <p class="text-gray-600 mb-6">
+                Website ini mungkin memiliki performa responsivitas lambat pada perangkat <span style="font-weight: bold;">Android.</span> saya sedang berusaha memperbaikinya. Terima kasih atas pengertiannya.
+                <br><br>
+                <span class="text-sm italic">- Developer</span>
+            </p>
+            <button id="continueButton" class="bg-primary text-white py-3 px-8 rounded-full font-semibold inline-block hover:bg-opacity-90 transition">
+                Lanjutkan Menjelajah
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // buat popup auto close dalam 10 detik
+    let time = 10;
+    const timeDisplay = document.getElementById('time');
+    const popup = document.getElementById('warningPopup');
+
+    const timer = setInterval(() => {
+        timeDisplay.innerText = `otomatis tertutup dalam ${time} detik`;
+        time--;
+        if (time < 0) {
+            clearInterval(timer);
+            popup.classList.add('hidden');
+        }
+    }, 1000);
+</script>
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top-btn">
+        <i class="fas fa-arrow-up text-xl"></i>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul>
+            <li><a  href="#home">Beranda</a></li>
+            <li><a href="#sambutan">Sambutan</a></li>
+            <li><a href="#struktur">Struktur</a></li>
+            <li><a href="#kegiatan">Kegiatan</a></li>
+            <li><a href="#galeri">Galeri</a></li>
+            <li><a href="#agenda">Agenda</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </div>
+    <!-- Header & Navigation -->
+    <header class="fixed w-full z-50">
+        <nav class="nav-glass py-4 px-6 lg:px-0">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="img/telkom.png" class="w-12 h-12 mr-3" alt="Logo Telkom">
+                    <span class="text-xl font-bold text-secondary font-serif">OSIS SMK Telkom 1 Medan</span>
+                </div>
+                
+                <ul class="hidden lg:flex space-x-8 lg:mx-auto">
+                    <li><a href="#home" class="text-secondary hover:text-primary font-medium transition">Beranda</a></li>
+                    <li><a href="#sambutan" class="text-secondary hover:text-primary font-medium transition">Sambutan</a></li>
+                    <li><a href="#struktur" class="text-secondary hover:text-primary font-medium transition">Struktur</a></li>
+                    <li><a href="#kegiatan" class="text-secondary hover:text-primary font-medium transition">Kegiatan</a></li>
+                    <li><a href="#galeri" class="text-secondary hover:text-primary font-medium transition">Galeri</a></li>
+                    <li><a href="#agenda" class="text-secondary hover:text-primary font-medium transition">Agenda</a></li>
+                    <li><a href="#kontak" class="text-secondary hover:text-primary font-medium transition">Kontak</a></li>
+                </ul>
+                
+                <div class="flex items-center lg:hidden ml-auto">
+                    <button id="mobileMenuBtn" class="text-secondary">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-6">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000" class="text-4xl md:text-5xl font-bold text-secondary mb-4 font-serif">
+                        Organisasi Siswa Intra Sekolah <br>
+                        <span class="text-primary">SMK Telkom 1 Medan</span>
+                    </h1>
+                    <p data-aos="fade-left" data-aos-delay="600" data-aos-duration="1000" class="text-lg text-gray-600 mb-8 max-w-lg">
+                        Menjadi teladan dengan moto "Aino 'i know' (ahklak is number one)" dan "D'Real ICT", menciptakan generasi unggul, berkarakter, dan siap menjawab tantangan zaman.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a  data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000" href="#struktur" class="btn-primary py-3 px-6 rounded-full inline-block">
+                            Kenali Pengurus <i class="ml-2 fas fa-arrow-down"></i>
+                        </a>
+                        <a  data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000" href="#kegiatan" class="glass-card text-primary py-3 px-6 rounded-full font-semibold inline-block border border-primary">
+                            Lihat Kegiatan
+                        </a>
+                    </div>
+                </div>
+                
+                <div data-tilt data-tilt-reverse="false" class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="glass-card p-8 rounded-2xl shadow-glass w-80 h-80 flex flex-col items-center justify-center floating">
+                            <img src="img/osis.png" class="w-32 h-32 mb-4" alt="Logo OSIS SMK Telkom 1 Medan">
+                            <h3 class="text-xl font-bold text-secondary mb-2 font-serif">OSIS</h3>
+                            <p class="text-center text-gray-600">SMK Telkom 1 Medan</p>
+                        </div>
+                        
+                        <div class="absolute -top-6 -left-6 w-32 h-32 bg-primary rounded-full opacity-20"></div>
+                        <div class="absolute -bottom-6 -right-6 w-40 h-40 bg-secondary rounded-full opacity-20"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sambutan Ketua OSIS -->
+    <section id="sambutan" class="py-20 px-6 bg-softred relative overflow-hidden">
+        <!-- Decorative background -->
+        <div class="absolute inset-0 pointer-events-none z-0">
+            <svg width="100%" height="100%" viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-0 left-0">
+                <path fill="#E63946" fill-opacity="0.08" d="M0,160L80,149.3C160,139,320,117,480,138.7C640,160,800,224,960,229.3C1120,235,1280,181,1360,154.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+            </svg>
+        </div>
+        <div class="container mx-auto relative z-10">
+            <h2 class="text-3xl font-bold text-center mb-16 section-title" data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000">
+                Sambutan Ketua OSIS
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center max-w-5xl mx-auto glass-card p-8" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000"">
+                <!-- Profile Card -->
+                <div class="flex flex-col items-center md:items-start md:col-span-1">
+                    <div class="relative group">
+                        <div class="bg-white rounded-full p-2 shadow-lg border-4 border-primary">
+                            <img src="img/anggota/alfrido.jpg"
+                                alt="Alfridho Ginting"
+                                class="w-44 h-44 md:w-52 md:h-52 rounded-full object-cover transition-transform duration-300 group-hover:scale-105 border-4 border-white shadow-xl" />
+                        </div>
+                        <span class="absolute bottom-4 right-4 bg-primary text-white px-5 py-2 rounded-full text-sm font-bold shadow-lg">Ketua OSIS</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-secondary mt-6 font-serif">Alfridho Ginting</h3>
+                    <p class="text-primary font-medium mb-2 text-lg">Ketua OSIS Periode 2024/2025</p>
+                    <div class="mt-2 text-base text-gray-500 italic">"Bersama, kita ciptakan perubahan nyata."</div>
+                </div>
+                <!-- Sambutan & Motivasi -->
+                <div class="md:col-span-2">
+                    <blockquote class="border-l-4 border-primary pl-4 mb-6 text-lg text-gray-700 font-serif italic">
+                        Assalamualaikum warahmatullahi wabarakatuh.<br>
+                        Selamat datang di website resmi OSIS SMK Telkom 1 Medan.
+                    </blockquote>
+                    <div class="text-gray-700 mb-4">
+                        <p class="mb-2">Saya, <span class="font-bold text-secondary">Alfridho Ginting</span>, bersama seluruh jajaran pengurus OSIS, mengucapkan terima kasih atas kepercayaan dan dukungan yang diberikan kepada kami. Website ini hadir sebagai pusat informasi, inspirasi, dan kolaborasi bagi seluruh siswa, guru, dan keluarga besar SMK Telkom 1 Medan.</p>
+                        <p class="mb-2">Sebagai <span class="font-bold text-primary">Pusat Keunggulan</span>, kami berkomitmen untuk mengedepankan integritas, inovasi, dan semangat kolaborasi. Moto kami, <span class="font-bold">Aino 'i know' (akhlak is number one)</span> dan <span class="font-bold">D'Real ICT</span>, menjadi landasan dalam setiap aktivitas OSIS.</p>
+                        <p class="mb-2">OSIS adalah wadah pengembangan karakter, kreativitas, dan kepemimpinan. Kami membuka ruang bagi ide-ide segar, aspirasi, dan partisipasi aktif seluruh siswa untuk mewujudkan program-program yang berdampak positif dan berkelanjutan.</p>
+                    </div>
+                    <div class="bg-primary/10 rounded-lg p-4 mb-4">
+                        <span class="font-bold text-primary">Highlight OSIS 2024/2025:</span>
+                        <ul class="list-disc ml-6 text-gray-700 text-sm mt-2">
+                            <li>Peluncuran program <span class="font-semibold">Green Action</span> & inovasi lingkungan</li>
+                            <li>Workshop teknologi & pengembangan soft skill</li>
+                            <li>Rangkaian lomba seni, olahraga, dan public speaking</li>
+                            <li>Penguatan karakter dan kepemimpinan siswa</li>
+                        </ul>
+                    </div>
+                    <div class="mt-4 text-gray-600 italic">
+                        Wassalamualaikum warahmatullahi wabarakatuh.
+                    </div>
+                    <div class="mt-6 text-right">
+                        <span class="font-bold text-secondary">Alfridho Ginting<br>Ketua Umum OSIS SMK Telkom 1 Medan</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <section id="struktur" class="py-20 px-6">
+  <div class="container mx-auto">
+    <h2
+      class="text-3xl font-bold text-center mb-16 section-title"
+      data-aos="fade-up"
+    >
+      Struktur Organisasi
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="glass-card p-6" data-aos="fade-up">
+        <h3 class="text-xl font-bold text-secondary mb-6 text-center font-serif">
+          Pengurus Inti
+        </h3>
+        <div class="grid grid-cols-1 gap-6">
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">Ketua Umum</div>
+              <img
+                src="img/anggota/alfrido.jpg"
+                alt="Alfridho Ginting"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Alfridho Ginting</h4>
+                <p class="text-sm opacity-80">XII RPL 1</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">Ketua Umum OSIS</h4>
+              <p class="text-gray-700">Alfridho Ginting</p>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">Ketua 1</div>
+              <img
+                src="img/anggota/naswa.jpg"
+                alt="Nasywa Aurelie Arfandy"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Nasywa Aurelie Arfandy</h4>
+                <p class="text-sm opacity-80">XII DKV 1</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">Ketua OSIS 1</h4>
+              <p class="text-gray-700">Nasywa Aurelie Arfandy</p>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">Ketua 2</div>
+              <img
+                src="img/anggota/rahim.jpg"
+                alt="Abdurrahim Tarigan"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Abdurrahim Tarigan</h4>
+                <p class="text-sm opacity-80">XII RPL 1</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">Ketua OSIS 2</h4>
+              <p class="text-gray-700">Abdurrahim Tarigan</p>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">Sekretaris</div>
+              <img
+                src="img/anggota/chintia.jpg"
+                alt="Chintya Novita Sari"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Chintya Novita Sari</h4>
+                <p class="text-sm opacity-80">XII RPL 1</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">Sekretaris</h4>
+              <p class="text-gray-700">Chintya Novita Sari</p>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">Wakil Sekretaris</div>
+              <img
+                src="img/anggota/eunike.jpg"
+                alt="Eunike Angela br Ginting"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Eunike Angela br Ginting</h4>
+                <p class="text-sm opacity-80">XII TJA 1</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">Wakil Sekretaris</h4>
+              <p class="text-gray-700">Eunike Angela br Ginting</p>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">Bendahara</div>
+              <img
+                src="img/anggota/naomi.jpg"
+                alt="Naomi Syahkira"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Naomi Syahkira</h4>
+                <p class="text-sm opacity-80">XII TKJ 1</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">Bendahara</h4>
+              <p class="text-gray-700">Naomi Syahkira</p>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">Wakil Bendahara</div>
+              <img
+                src="img/anggota/dekape.jpg"
+                alt="Dekape"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Sylvira</h4>
+                <p class="text-sm opacity-80">XII DKV 1</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">Wakil Bendahara</h4>
+              <p class="text-gray-700">Sylvira</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-xl font-bold text-secondary mb-6 text-center font-serif">
+          Sekbid & Kabid
+        </h3>
+        <div class="grid grid-cols-1 gap-6">
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">Kabid Ekskul</div>
+              <img
+                src="img/anggota/zuriel.jpg"
+                alt="Zuriel Sibagariang"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Zuriel Sibagariang</h4>
+                <p class="text-sm opacity-80">XII TKJ AXIOO</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">Kabid Ekstrakurikuler</h4>
+              <p class="text-gray-700">Zuriel Sibagariang</p>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">Sekbid Olahruh</div>
+              <img
+                src="img/anggota/yohan.jpg"
+                alt="Yohan Parhusip"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Yohan Parhusip</h4>
+                <p class="text-sm opacity-80">XII TKJ 1</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">Sekbid Olahruh</h4>
+              <p class="text-gray-700">Yohan Parhusip</p>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">Kabid IT</div>
+              <img
+                src="img/anggota/anin.jpg"
+                alt="Anindita Attalliya Rachmadie"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Anindita Attalliya</h4>
+                <p class="text-sm opacity-80">XII DKV 1</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">Kabid IT Support</h4>
+              <p class="text-gray-700">Anindita Attalliya Rachmadie</p>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">Sekbid Olahratio</div>
+              <img
+                src="img/anggota/jhon.jpg"
+                alt="Jhon Edy Goloman Marbun"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Jhon Edy Goloman Marbun</h4>
+                <p class="text-sm opacity-80">XII TJA 1</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">Sekbid Olahratio</h4>
+              <p class="text-gray-700">Jhon Edy Goloman Marbun</p>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">Sekbid Olahraga</div>
+              <img
+                src="img/anggota/alvaro.jpg"
+                alt="Alvaro Tristan Matondang"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Alvaro Tristan Matondang</h4>
+                <p class="text-sm opacity-80">XII TJA 1</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">Sekbid Olahraga</h4>
+              <p class="text-gray-700">Alvaro Tristan Matondang</p>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">Sekbid Olahrasa</div>
+              <img
+                src="img/anggota/yehezkiel.jpg"
+                alt="Yehezkiel Sebastian Milala"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Yehezkiel Sebastian Milala</h4>
+                <p class="text-sm opacity-80">XII TKJ 1</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">Sekbid Olahrasa</h4>
+              <p class="text-gray-700">Yehezkiel Sebastian Milala</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-xl font-bold text-secondary mb-6 text-center font-serif">
+          Media & kreatif Kabid, dan Sekbid
+        </h3>
+        <div class="grid grid-cols-1 gap-6">
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">HUMAS</div>
+              <img
+                src="img/anggota/diaz.jpg"
+                alt="Diaz Aditya"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Diaz Aditya</h4>
+                <p class="text-sm opacity-80">XII TKJ AXIOO</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">HUMAS</h4>
+              <p class="text-gray-700">Diaz Aditya</p>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">Kabid Kreatif</div>
+              <img
+                src="img/anggota/arep.jpg"
+                alt="Arief Daniswara Nasution"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Arief Daniswara</h4>
+                <p class="text-sm opacity-80">XII DKV 1</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">Kabid Kreatif</h4>
+              <p class="text-gray-700">Arief Daniswara Nasution</p>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">Sekbid Website</div>
+              <img
+                src="img/anggota/djob.jpg"
+                alt="Djob Misael M.Marbun"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Djob Misael M.Marbun</h4>
+                <p class="text-sm opacity-80">XII RPL 1</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">Sekbid Website</h4>
+              <p class="text-gray-700">Djob Misael M.Marbun</p>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">Sekbid Tiktok</div>
+              <img
+                src="img/anggota/azril.jpg"
+                alt="Adzril Maulana"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Adzril Maulana</h4>
+                <p class="text-sm opacity-80">XII TKJ AXIOO</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">Sekbid Tiktok</h4>
+              <p class="text-gray-700">Adzril Maulana</p>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">Sekbid Instagram</div>
+              <img
+                src="img/anggota/cdkape.jpg"
+                alt="Cynthia Gabriana Purba"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Cynthia Gabriana Purba</h4>
+                <p class="text-sm opacity-80">XII DKV 1</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">Sekbid Instagram</h4>
+              <p class="text-gray-700">Cynthia Gabriana Purba</p>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">Sekbid Youtube</div>
+              <img
+                src="img/anggota/jibril.jpg"
+                alt="Ahmad Jibril Daulay"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Ahmad Jibril Daulay</h4>
+                <p class="text-sm opacity-80">XII RPL 1</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">Sekbid Youtube</h4>
+              <p class="text-gray-700">Ahmad Jibril Daulay</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="text-xl font-bold text-secondary mb-6 text-center font-serif">
+          Bidang Lainnya
+        </h3>
+        <div class="grid grid-cols-1 gap-6">
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">Kabid Lingkungan</div>
+              <img
+                src="img/anggota/gabriel.jpg"
+                alt="Gabriel Firdaus Barus"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Gabriel Firdaus</h4>
+                <p class="text-sm opacity-80">XII DKV 1</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">Kabid Lingkungan</h4>
+              <p class="text-gray-700">Gabriel Firdaus Barus</p>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">Kabid MPK</div>
+              <img
+                src="img/anggota/giesya.jpg"
+                alt="Giesya Josiecha Ginting"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Giesya Josiecha</h4>
+                <p class="text-sm opacity-80">XII DKV 1</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">Kabid MPK</h4>
+              <p class="text-gray-700">Giesya Josiecha Ginting</p>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">Sekbid Edukasi</div>
+              <img
+                src="img/anggota/kanesia.jpg"
+                alt="Kaneishia Aqueni"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Kaneishia Aqueni</h4>
+                <p class="text-sm opacity-80">XII RPL 1</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">Sekbid Edukasi</h4>
+              <p class="text-gray-700">Kaneishia Aqueni</p>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">Sekbid Bela Negara</div>
+              <img
+                src="img/anggota/taya.jpg"
+                alt="Attaya Zuhra Fauzi"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Attaya Zuhra Fauzi</h4>
+                <p class="text-sm opacity-80">XII TKJ AXIOO</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">Sekbid Bela Negara</h4>
+              <p class="text-gray-700">Attaya Zuhra Fauzi</p>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">A. Ekskul</div>
+              <img
+                src="img/anggota/afrena.jpg"
+                alt="Afreena Fairuz Nazla"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Afreena Fairuz Nazla</h4>
+                <p class="text-sm opacity-80">XII TKJ 1</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">A.Ekskul</h4>
+              <p class="text-gray-700">Afreena Fairuz Nazla</p>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="relative h-64 overflow-hidden">
+              <div class="position-badge">Sekbid Olahruh</div>
+              <img
+                src="img/anggota/haris.jpg"
+                alt="Harits Al Hammam"
+                class="w-full h-full object-cover member-img"
+              />
+              <div class="member-overlay">
+                <h4 class="font-bold text-lg">Harits Al Hammam</h4>
+                <p class="text-sm opacity-80">XII DKV 1</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white">
+              <h4 class="font-bold text-secondary">Sekbid Olahruh</h4>
+              <p class="text-gray-700">Harits Al Hammam</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-16">
+      <a
+        href="anggota.html"
+        class="btn-primary text-white py-3 px-8 rounded-full font-semibold inline-block"
+      >
+        Lihat Semua Anggota <i class="ml-2 fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+    <!-- Bidang & Kegiatan OSIS -->
+    <section id="kegiatan" class="py-20 px-6 bg-softred">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-16 section-title" data-aos="fade-up">Bidang & Kegiatan OSIS</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Bidang Aktif -->
+                <div class="glass-card p-8" data-aos="fade-up">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-list-check text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-4 font-serif">Bidang Aktif OSIS</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            IT Support
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Inovasi Pelestarian Lingkungan
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Ekstrakurikuler
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Kerohanian
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Kreativitas dan Inovasi
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            Media Sosial dan Website
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Kegiatan Rutin -->
+                <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-calendar-check text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-4 font-serif">Kegiatan Rutin OSIS</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-leaf text-primary mr-2"></i>
+                            Eco brick
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-praying-hands text-primary mr-2"></i>
+                            Memastikan siswa ibadah setiap Jumat
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-users text-primary mr-2"></i>
+                            Rapat rutin pengurus OSIS
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-broom text-primary mr-2"></i>
+                            Jumat bersih lingkungan sekolah
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-book-open text-primary mr-2"></i>
+                            Pendampingan belajar siswa
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-hands-helping text-primary mr-2"></i>
+                            Bakti sosial bulanan
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Program Unggulan -->
+                <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-trophy text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-4 font-serif">Program Unggulan OSIS</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-seedling text-primary mr-2"></i>
+                            Green Action
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-microphone text-primary mr-2"></i>
+                            Lomba Puisi
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-comments text-primary mr-2"></i>
+                            Lomba Public Speaking
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-laptop-code text-primary mr-2"></i>
+                            Workshop Teknologi
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-palette text-primary mr-2"></i>
+                            Pameran Seni Siswa
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-running text-primary mr-2"></i>
+                            Turnamen Olahraga Antar Kelas
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <section id="galeri" class="py-20 px-6">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-16 section-title" data-aos="fade-up">Galeri Konten</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="gallery-item" data-aos="fade-up">
+                <div class="flex items-center justify-center h-64">
+                    <img src="img/anggota/eco.jpg" class="w-full h-full object-cover rounded-full shadow-lg" alt="Kegiatan Eco Brick">
+                </div>
+                <div class="glass-card p-4 mt-2">
+                    <h3 class="font-bold text-secondary font-serif">Kegiatan Eco Brick</h3>
+                    <p class="text-gray-600 text-sm">Program pelestarian lingkungan dengan membuat bata ramah lingkungan</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex items-center justify-center h-64">
+                    <img src="img/anggota/ps.png" class="w-full h-full object-cover rounded-full shadow-lg" alt="Lomba Public Speaking">
+                </div>
+                <div class="glass-card p-4 mt-2">
+                    <h3 class="font-bold text-secondary font-serif">Lomba Public Speaking</h3>
+                    <p class="text-gray-600 text-sm">Ajang pengembangan kemampuan komunikasi siswa</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex items-center justify-center h-64">
+                    <div class="bg-gradient-to-br from-primary/80 to-secondary/80 rounded-full shadow-lg flex items-center justify-center w-32 h-32 glass-card">
+                        <i class="fas fa-mosque text-white text-6xl drop-shadow-lg"></i>
+                    </div>
+                </div>
+                <div class="glass-card p-4 mt-2">
+                    <h3 class="font-bold text-secondary font-serif">Ibadah Jumat Bersama</h3>
+                    <p class="text-gray-600 text-sm">Kegiatan rutin keagamaan setiap hari Jumat</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="0">
+                <div class="flex items-center justify-center h-64">
+                    <video class="w-full h-full object-cover rounded-full shadow-lg" autoplay loop muted>
+                        <source src="img/anggota/rapat.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="glass-card p-4 mt-2">
+                    <h3 class="font-bold text-secondary font-serif">Rapat OSIS</h3>
+                    <p class="text-gray-600 text-sm">Sidang rutin pengurus OSIS membahas program kerja</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex items-center justify-center h-64">
+                    <img src="img/anggota/bersama.jpg" class="w-full h-full object-cover rounded-full shadow-lg" alt="Foto bersama">
+                </div>
+                <div class="glass-card p-4 mt-2">
+                    <h3 class="font-bold text-secondary font-serif">Foto bersama</h3>
+                    <p class="text-gray-600 text-sm">Momen kebersamaan yang terekam indah.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex items-center justify-center h-64">
+                    <img src="img/anggota/green.jpg" class="w-full h-full object-cover rounded-full shadow-lg" alt="Green Action">
+                </div>
+                <div class="glass-card p-4 mt-2">
+                    <h3 class="font-bold text-secondary font-serif">Green Action</h3>
+                    <p class="text-gray-600 text-sm">Aksi penghijauan lingkungan sekolah</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-10">
+            <a href="galeri.html" class="btn-primary text-white py-3 px-8 rounded-full font-semibold inline-block">
+                Lihat Galeri Lengkap <i class="ml-2 fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+</section>
+
+    <!-- Pengumuman & Agenda -->
+    <section id="agenda" class="py-20 px-6 bg-softred">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Pengumuman -->
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl font-bold mb-8 section-title">Pengumuman</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="announcement-card glass-card p-6 rounded-xl">
+                            <div class="flex items-start">
+                                <div class="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center mr-4">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg text-secondary font-serif">Pendaftaran Ekstrakurikuler Baru</h3>
+                                    <p class="text-gray-600 mt-2">Buka pendaftaran untuk ekstrakurikuler Robotik, Digital Marketing, dan Fotografi. Daftar segera di ruang OSIS.</p>
+                                    <p class="text-sm text-gray-500 mt-2"><i class="far fa-clock mr-1"></i> 15 Juli 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-card p-6 rounded-xl">
+                            <div class="flex items-start">
+                                <div class="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center mr-4">
+                                    <i class="fas fa-calendar"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg text-secondary font-serif">Jadwal Pelaksanaan NEAX 2025</h3>
+                                    <p class="text-gray-600 mt-2">National Exhibition of Art and Technology (NEAX) akan dilaksanakan pada 20-22 Agustus 2025.</p>
+                                    <p class="text-sm text-gray-500 mt-2"><i class="far fa-clock mr-1"></i> 10 Juli 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-card p-6 rounded-xl">
+                            <div class="flex items-start">
+                                <div class="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center mr-4">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg text-secondary font-serif">Open Recruitment Pengurus OSIS</h3>
+                                    <p class="text-gray-600 mt-2">Bagi siswa kelas X dan XI yang ingin bergabung menjadi pengurus OSIS, pendaftaran dibuka mulai 1 September 2025.</p>
+                                    <p class="text-sm text-gray-500 mt-2"><i class="far fa-clock mr-1"></i> 5 Juli 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Agenda Kegiatan -->
+                <div data-aos="fade-left">
+                    <h2 class="text-3xl font-bold mb-8 section-title">Agenda Kegiatan</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="event-card glass-card p-6 rounded-xl">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="bg-secondary text-white rounded-xl w-24 h-24 flex flex-col items-center justify-center mr-6 mb-4 md:mb-0">
+                                    <span class="text-3xl font-bold">20</span>
+                                    <span class="text-sm">AGUSTUS</span>
+                                    <span class="text-sm">2025</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg text-secondary font-serif">NEAX 2025</h3>
+                                    <p class="text-gray-600 mt-2">National Exhibition of Art and Technology, pameran karya seni dan teknologi siswa se-Sumatera Utara.</p>
+                                    <p class="text-primary font-medium mt-2"><i class="fas fa-map-marker-alt mr-2"></i> Aula Utama SMK Telkom 1 Medan</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="event-card glass-card p-6 rounded-xl">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="bg-secondary text-white rounded-xl w-24 h-24 flex flex-col items-center justify-center mr-6 mb-4 md:mb-0">
+                                    <span class="text-3xl font-bold">12</span>
+                                    <span class="text-sm">SEPT</span>
+                                    <span class="text-sm">2025</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg text-secondary font-serif">TBL 2025</h3>
+                                    <p class="text-gray-600 mt-2">Telkom Basketball League, kompetisi bola basket antar kelas dan sekolah se-Kota Medan.</p>
+                                    <p class="text-primary font-medium mt-2"><i class="fas fa-map-marker-alt mr-2"></i> Lapangan Basket SMK Telkom 1 Medan</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="event-card glass-card p-6 rounded-xl">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="bg-secondary text-white rounded-xl w-24 h-24 flex flex-col items-center justify-center mr-6 mb-4 md:mb-0">
+                                    <span class="text-3xl font-bold">28</span>
+                                    <span class="text-sm">OKT</span>
+                                    <span class="text-sm">2025</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg text-secondary font-serif">ESA 22</h3>
+                                    <p class="text-gray-600 mt-2">Educational Seminar and Award, seminar pendidikan dan penganugerahan prestasi siswa berprestasi.</p>
+                                    <p class="text-primary font-medium mt-2"><i class="fas fa-map-marker-alt mr-2"></i> Auditorium SMK Telkom 1 Medan</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontak" class="py-16 px-6 bg-secondary text-white">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="img/osis.png" class="w-12 h-12 mr-3" alt="Logo OSIS SMK Telkom 1 Medan">
+                        <span class="text-xl font-bold font-serif">OSIS SMK Telkom 1 Medan</span>
+                    </div>
+                    <p class="mb-4 opacity-80">Organisasi Siswa Intra Sekolah yang menjadi wadah pengembangan potensi siswa di SMK Telkom 1 Medan.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-tiktok text-2xl"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-youtube text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 font-serif">Kontak Kami</h3>
+                    <ul class="space-y-2 opacity-80">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>Jl. Jamin Ginting Km. 11 No. 9C, Kec. Medan Tuntungan, Kota Medan, Sumatera Utara</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <span>osis@smktelkommedan.sch.id</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-instagram mr-3"></i>
+                            <span>osissmktelkommdn</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-tiktok mr-3"></i>
+                            <span>osissmktelkommedan</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-youtube mr-3"></i>
+                            <span>Official Osis Smk Telkom 1 Medan</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 font-serif">Tautan Cepat</h3>
+                    <ul class="space-y-2 opacity-80">
+                        <li><a href="#home" class="hover:text-primary transition">Beranda</a></li>
+                        <li><a href="#sambutan" class="hover:text-primary transition">Sambutan</a></li>
+                        <li><a href="#struktur" class="hover:text-primary transition">Struktur Organisasi</a></li>
+                        <li><a href="#kegiatan" class="hover:text-primary transition">Kegiatan</a></li>
+                        <li><a href="#galeri" class="hover:text-primary transition">Galeri</a></li>
+                        <li><a href="#agenda" class="hover:text-primary transition">Agenda</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4 font-serif">Peta Lokasi</h3>
+                    <iframe
+                        src="https://www.google.com/maps?q=SMK+Telkom+1+Medan,+Jl.+Jamin+Ginting+Km.+11+No.+9C,+Medan&hl=id&z=18&output=embed"
+                        width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            
+            <div class="border-t border-white/20 mt-12 pt-8 text-center opacity-80">
+                <p>&copy; 2025 OSIS SMK Telkom 1 Medan. All Rights Reserved.</p>
+                <p class="mt-2">Dibuat oleh sekbid website osis SMK TELKOM 1 MEDAN - Djob Misael - Fullstack web developer</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
